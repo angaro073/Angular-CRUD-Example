@@ -31,20 +31,26 @@ describe('PostsHttpService', () => {
 	// 	});
 	// });
 
-	it('we can get a specific post based of its id', () => {
-		service.getPost(post.id).subscribe((post) => {
-			expect(post?.title).not.toEqual("");
-		});
-	});
-
-	// it('we can modify a post', () => {
-	// 	let newViewsNumber = ++post.views;
-	// 	service.updatePost(post.id, "Third title", newViewsNumber);
-	// 	service.getPost(post.id).subscribe((updatedPost) => {
-	// 		expect(updatedPost.title).toBe("Third title");
-	// 		expect(updatedPost.views).toBe(newViewsNumber);
+	// it('we can get a specific post based of its id', () => {
+	// 	service.getPost(post.id).subscribe((post) => {
+	// 		expect(post?.title).not.toEqual("");
 	// 	});
 	// });
+
+	it('we can modify a post', () => {
+		let newViewsNumber = ++post.views;
+		service.updatePost(post.id, "Second title")
+		.pipe(switchMap(() => service.getPost(post.id)))
+		.subscribe((updatedPost) => {
+			expect(updatedPost.title).toBe("Second title");
+		});
+		service.updatePost(post.id, "Third title", newViewsNumber)
+		.pipe(switchMap(() => service.getPost(post.id)))
+		.subscribe((updatedPost) => {
+			expect(updatedPost.title).toBe("Third title");
+			expect(updatedPost.views).toBe(newViewsNumber);
+		});
+	});
 
 	// it('we can delete a post', () => {
 	// 	service.deletePost(post.id);

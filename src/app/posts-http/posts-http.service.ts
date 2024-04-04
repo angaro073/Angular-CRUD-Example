@@ -25,10 +25,10 @@ export class PostsHttpService {
 		return this.httpClient.get<Post>(`${this.apiURL}/${id}`);
 	}
 
-
-	// updatePost(id: string, title: string): Observable<Post> {
-	// 	return this.httpClient.put<Post>(`${this.apiURL}/${id}`, `{"title": ${title}, "views": 0}`);
-	// }
+	updatePost(id: string, title: string, views?: number): Observable<Post> {
+		let strViews = views != undefined ? `, "views": ${views}` : '';
+		return this.httpClient.put<Post>(`${this.apiURL}/${id}`, `{"title": "${title}"${strViews}}`);
+	}
 	
 	// deletePost(id: string) {
 	// 	return this.httpClient.delete<Post>(`${this.apiURL}/${id}`);
