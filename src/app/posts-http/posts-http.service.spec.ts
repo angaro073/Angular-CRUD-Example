@@ -31,11 +31,11 @@ describe('PostsHttpService', () => {
 	// 	});
 	// });
 
-	// it('we can get a specific post based of its id', () => {
-	// 	service.getPost(post.id).subscribe((post) => {
-	// 		expect(post).not.toEqual(null);
-	// 	});
-	// });
+	it('we can get a specific post based of its id', () => {
+		service.getPost(post.id).subscribe((post) => {
+			expect(post?.title).not.toEqual("");
+		});
+	});
 
 	// it('we can modify a post', () => {
 	// 	let newViewsNumber = ++post.views;

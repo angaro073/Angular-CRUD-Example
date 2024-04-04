@@ -21,9 +21,9 @@ export class PostsHttpService {
 		return this.httpClient.get<Post[]>(this.apiURL);
 	}
 
-	// getPost(id: string): Observable<Post> {
-	// 	return this.httpClient.get<Post>(`${this.apiURL}/${id}`);
-	// }
+	getPost(id: string): Observable<Post> {
+		return this.httpClient.get<Post>(`${this.apiURL}/${id}`);
+	}
 
 
 	// updatePost(id: string, title: string): Observable<Post> {
