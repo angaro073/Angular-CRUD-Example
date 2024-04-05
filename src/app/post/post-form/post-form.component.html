@@ -1,35 +1,37 @@
-<div>
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <mat-form-field>
-      <mat-label>Title</mat-label>
-      <input
-        matInput
-        formControlName="title"
-        required
-      >
-      @if (submitted && control['title'].errors) {
-        @if (control['title'].errors['required']) {
-          <mat-error> title is required </mat-error>
-        }
+<form
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+  class="container"
+>
+  <mat-form-field>
+    <mat-label>Title</mat-label>
+    <input
+      matInput
+      formControlName="title"
+      required
+    >
+    @if (submitted && control['title'].errors) {
+      @if (control['title'].errors['required']) {
+        <mat-error> title is required </mat-error>
       }
-    </mat-form-field>
-    <div class="form-group">
-      @if (!this.post) {
-        <button mat-flat-button color="accent">Create</button>
-      }
-      @else {
-        <button
-          mat-flat-button
-          color="primary"
-          color="accent"
-        >Save</button>
-        <button mat-flat-button color="warn">Delete</button>
-      }
+    }
+  </mat-form-field>
+  <div class="form-group">
+    @if (!this.post) {
+      <button mat-flat-button color="accent">Create</button>
+    }
+    @else {
       <button
-        routerLink="/posts"
         mat-flat-button
-        style="background-color: lightgray;"
-      >Cancel</button>
-    </div>
-  </form>
-</div>
+        color="primary"
+        color="accent"
+      >Save</button>
+      <button mat-flat-button color="warn">Delete</button>
+    }
+    <button
+      routerLink="/posts"
+      mat-flat-button
+      style="background-color: lightgray;"
+    >Cancel</button>
+  </div>
+</form>

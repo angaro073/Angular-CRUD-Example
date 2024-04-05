@@ -5,11 +5,12 @@ import { Post } from '../posts-http/post';
 import { PostsHttpService } from '../posts-http/posts-http.service';
 
 import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-post',
   standalone: true,
-  imports: [RouterLink, MatTableModule],
+  imports: [RouterLink, MatTableModule, MatButtonModule],
   templateUrl: './post.component.html',
   styleUrl: './post.component.css'
 })

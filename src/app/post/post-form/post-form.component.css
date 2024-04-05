@@ -1,11 +1,15 @@
 form {
   display: flex;
   flex-direction: column;
-  padding: 2rem;
   width: 500px;
+}
+
+.container {
+  padding: 2rem;
   margin-right: auto;
   margin-left: auto;
 }
+
 .form-group {
   align-content: end;
 }
