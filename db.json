@@ -1,7 +1,6 @@
 {
   "posts": [
     {
-<<<<<<< HEAD
       "id": "1",
       "title": "title 1",
       "views": 100
@@ -37,11 +36,6 @@
       "id": "3",
       "text": "a comment 2 about post 2",
       "postId": "2"
-=======
-      "id": "2",
-      "title": "another title",
-      "views": 200
->>>>>>> form
     }
   ]
 }

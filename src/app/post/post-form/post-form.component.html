@@ -1,21 +1,20 @@
 <div>
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <mat-form-field>
-        <mat-label>Title</mat-label>
-        <input
-          matInput
-          formControlName="title"
-          required
-        >
-        @if (submitted && control['title'].errors) {
-          @if (control['title'].errors['required']) {
-            <mat-error> title is required </mat-error>
-          }
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input
+        matInput
+        formControlName="title"
+        required
+      >
+      @if (submitted && control['title'].errors) {
+        @if (control['title'].errors['required']) {
+          <mat-error> title is required </mat-error>
         }
-      </mat-form-field>
-
+      }
+    </mat-form-field>
     <div class="form-group">
-      @if (!this.postId) {
+      @if (!this.post) {
         <button mat-flat-button color="accent">Create</button>
       }
       @else {
@@ -32,7 +31,5 @@
         style="background-color: lightgray;"
       >Cancel</button>
     </div>
-
-
   </form>
 </div>

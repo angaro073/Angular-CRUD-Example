@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { Post } from '../posts-http/post';
 import { RouterLink } from '@angular/router';
+
+import { Post } from '../posts-http/post';
+import { PostsHttpService } from '../posts-http/posts-http.service';
 
 import { MatTableModule } from '@angular/material/table';
 
@@ -13,9 +15,10 @@ import { MatTableModule } from '@angular/material/table';
 })
 export class PostComponent {
   protected posts: Post[] = [];
-  displayedColumns: string[] = ['id', 'title', 'views'];
+  displayedColumns: string[] = ['id', 'title', 'views', 'action'];
 
-  constructor(){
-    // this.PostsHttpService.getAllPosts().subscribe(data => { this.posts = data }); : Post[]
+  constructor(private PostsHttpService : PostsHttpService){
+    console.log("Loading posts...");
+    this.PostsHttpService.getAllPosts().subscribe((data) => { this.posts = data });
   }
 }

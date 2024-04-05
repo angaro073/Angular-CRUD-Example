@@ -6,3 +6,6 @@ form {
   margin-right: auto;
   margin-left: auto;
 }
+.form-group {
+  align-content: end;
+}
