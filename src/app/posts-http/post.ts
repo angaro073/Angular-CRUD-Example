@@ -1,5 +1,7 @@
-export type Post = {
-	id: string,
-	views: number
-	title: string,
+export type post = Post[];
+
+export interface Post {
+  id: string;
+  title: string;
+  views: number;
 }

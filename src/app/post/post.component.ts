@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Post } from './post';
+import { Post } from '../posts-http/post';
 import { RouterLink } from '@angular/router';
 
 import { MatTableModule } from '@angular/material/table';
