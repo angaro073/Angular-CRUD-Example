@@ -25,6 +25,7 @@ export class FormComponent {
 
   onSubmit(): void {
     this.submitted = true;
+    console.log(this.form.valid);
     if (!this.form.invalid) console.log(JSON.stringify(this.form.value, null, 2)) 
   }
 }

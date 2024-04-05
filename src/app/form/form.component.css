@@ -1,3 +1,27 @@
-.form-group{
-    margin-top: 20px;
+.container {
+  width: 100%;
+  padding-right: 50px;
+  padding-left: 50px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.form-group {
+  margin-top: 20px;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  appearance: none;
+  background-clip: padding-box;
+  border: 1px solid black;
+}
+
+.is-invalid {
+  border-color: red;
+}
+
+.invalid-feedback {
+  color: red;
 }
