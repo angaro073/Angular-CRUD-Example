@@ -13,8 +13,8 @@ export class PostsHttpService {
 
 	}
 
-	createPost(title: string): Observable<Post> {
-		return this.httpClient.post<Post>(`${this.apiURL}`, `{"title": "${title}", "views": 0}`);
+	createPost(post: Post): Observable<Post> {
+		return this.httpClient.post<Post>(`${this.apiURL}`, JSON.stringify(post));
 	}
 
 	getAllPosts(): Observable<Post[]> {
