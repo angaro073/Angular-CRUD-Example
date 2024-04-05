@@ -30,7 +30,7 @@ export class PostsHttpService {
 		return this.httpClient.put<Post>(`${this.apiURL}/${id}`, `{"title": "${title}"${strViews}}`);
 	}
 	
-	// deletePost(id: string) {
-	// 	return this.httpClient.delete<Post>(`${this.apiURL}/${id}`);
-	// }
+	deletePost(id: string) {
+		return this.httpClient.delete<Post>(`${this.apiURL}/${id}`);
+	}
 }
