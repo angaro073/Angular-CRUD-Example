@@ -1,6 +1,41 @@
 {
-    "posts": [
-      { "id": "1", "title": "a title", "views": 100 },
-      { "id": "2", "title": "another title", "views": 200 }
-    ]
+  "posts": [
+    {
+      "id": "1",
+      "title": "title 1",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "title 2",
+      "views": 200
+    },
+    {
+      "id": "1",
+      "title": "title 3",
+      "views": 300
+    },
+    {
+      "id": "6c6e",
+      "title": "title 4",
+      "views": 0
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment 1 about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "a comment 1 about post 2",
+      "postId": "2"
+    },
+    {
+      "id": "3",
+      "text": "a comment 2 about post 2",
+      "postId": "2"
+    }
+  ]
 }
