@@ -1,0 +1,50 @@
+<div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input
+          matInput
+          formControlName="title"
+          required
+        >
+        @if (submitted && control['title'].errors) {
+          @if (control['title'].errors['required']) {
+            <mat-error> title is required </mat-error>
+          }
+        }
+      </mat-form-field>
+
+
+    <!-- <div class="form-group">
+      <label>Title </label>
+      <input
+        type="text"
+        formControlName="title"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && control['title'].errors }"
+      />
+
+    </div> -->
+
+    <div class="form-group">
+      @if (!this.postId) {
+        <button mat-flat-button color="accent">Create</button>
+      }
+      @else {
+        <button
+          mat-flat-button
+          color="primary"
+          color="accent"
+        >Save</button>
+        <button mat-flat-button color="warn">Delete</button>
+      }
+      <button
+        routerLink="/posts"
+        mat-flat-button
+        style="background-color: lightgray;"
+      >Cancel</button>
+    </div>
+
+
+  </form>
+</div>
